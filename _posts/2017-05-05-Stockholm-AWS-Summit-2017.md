@@ -34,9 +34,9 @@ However, this depends on how much data that needs to be quickly accessible for y
 ## Breakout session 2: Deep Dive on MXNET and Deep Learning Frameworks, by Julien Simon (Tech Evangelist)
 
 ### Some links related to the talk
-[MXNET](http://mxnet.io/)
-[Samples](https://github.com/dmlc/mxnet/tree/master/example)
-[Julien's tutorial](https://chatbotslife.com/training-mxnet-part-1-mnist-6f0dc4210c62)
+[MXNET](http://mxnet.io/)  
+[Samples](https://github.com/dmlc/mxnet/tree/master/example)  
+[Julien's tutorial](https://chatbotslife.com/training-mxnet-part-1-mnist-6f0dc4210c62)  
 [AWS p2 instances](https://aws.amazon.com/blogs/aws/new-p2-instance-type-for-amazon-ec2-up-to-16-gpus/)
 
 This was a basic demonstration of the MXNET library and its compatability with AWS. The main selling points seem to be that:
