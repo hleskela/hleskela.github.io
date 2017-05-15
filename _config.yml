@@ -44,7 +44,7 @@ avatar: "/img/avatar-icon.png"
 author:
   name: Hannes Leskelä
   github: hleskela    # eg. daattali
-  linkedin: https://www.linkedin.com/in/hleskela/  # eg. daattali
+  linkedin: hleskela/  # eg. daattali
 
 # Select which links to show in the footer
 footer-links-active:
