@@ -92,7 +92,6 @@ function GetPercentage() {
     <div className="App">
       <header className="App-header">
       <h1>Should I Buy It?</h1>
-        <p className="rainbow-text">Life throws challenges and every challenge comes with rainbows and lights to conquer it.</p>
         <Question />
       </header>
     </div>
