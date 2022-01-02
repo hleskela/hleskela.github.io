@@ -29,14 +29,14 @@ class Question extends React.Component {
                'For more than a day?',
                'Liar...']
 
-  questions2 = {key:1, message:<Question text1="Can you survive without it?" yes='m3' no='m2'/>,
-               key:2, message:'Is there a cheaper version of similar qualities that satisfies your needs?',
-               key:2, message:'Are you my girlfriend?',
-               key:2, message:'Have you thought this through?',
-               key:2, message:'For more than 10 minutes?',
-               key:2, message:'For more than 1 hour?',
-               key:2, message:'For more than a day?',
-               key:2, message:'Liar...'}
+  questions2 = {message1:<Question text1="Can you survive without it?" yes='m3' no='m2'/>,
+               message2:'Is there a cheaper version of similar qualities that satisfies your needs?',
+               message3:'Are you my girlfriend?',
+               message4:'Have you thought this through?',
+               message5:'For more than 10 minutes?',
+               message6:'For more than 1 hour?',
+               message7:'For more than a day?',
+               message8:'Liar...'}
 
   changeText(newText) {
     this.setState({
@@ -63,6 +63,7 @@ class Question extends React.Component {
   }
 
   render() {
+    console.log(this.questions2["message3"]);
     return (
       <div>
         <h1>{this.state.text}</h1>
