@@ -22,21 +22,21 @@ class Question extends React.Component {
 
   questions = ['Can you survive without it?',
                'Is there a cheaper version of similar qualities that satisfies your needs?',
-               'Is your name Joanna?',
+               'Are you my girlfriend?',
                'Have you thought this through?',
                'For more than 10 minutes?',
                'For more than 1 hour?',
                'For more than a day?',
                'Liar...']
 
-  questions2 = {m1:<Question text1="Can you survive without it?" yes='m3' no='m2'/>,
-               m2:'Is there a cheaper version of similar qualities that satisfies your needs?',
-               m3:'Is your name Joanna?',
-               m4:'Have you thought this through?',
-               m5:'For more than 10 minutes?',
-               m6:'For more than 1 hour?',
-               m7:'For more than a day?',
-               m8:'Liar...'}
+  questions2 = {key:1, message:<Question text1="Can you survive without it?" yes='m3' no='m2'/>,
+               key:2, message:'Is there a cheaper version of similar qualities that satisfies your needs?',
+               key:2, message:'Are you my girlfriend?',
+               key:2, message:'Have you thought this through?',
+               key:2, message:'For more than 10 minutes?',
+               key:2, message:'For more than 1 hour?',
+               key:2, message:'For more than a day?',
+               key:2, message:'Liar...'}
 
   changeText(newText) {
     this.setState({
@@ -67,8 +67,10 @@ class Question extends React.Component {
       <div>
         <h1>{this.state.text}</h1>
         <div id="buttons">
-            <Button variant="contained" size="large" fullWidth={true} color="primary" onClick={this.testFunction}><h2>Yes</h2></Button>
-            <Button variant="contained" size="large" fullWidth={true} color="primary" onClick={this.negativeResponse}><h2>No</h2></Button>
+            <Button variant="contained" size="large" fullWidth={true}
+             color="primary" onClick={this.testFunction}><h2>Yes</h2></Button>
+            <Button variant="contained" size="large" fullWidth={true}
+             color="primary" onClick={this.negativeResponse}><h2>No</h2></Button>
         </div>
       </div>
     );
