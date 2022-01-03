@@ -10,7 +10,7 @@ class Question extends React.Component {
     this.text1 = props.text;
     this.yes_question_pointer = props.yes;
     this.no_question_pointer = props.no;
-    this.state = {text: 'Can you survive without it?', count: 1};
+    this.state = {text: 'First things first, can I survive without it?', count: 1};
 
     this.changeText = this.changeText.bind(this);
     this.testFunction = this.testFunction.bind(this);
@@ -18,7 +18,7 @@ class Question extends React.Component {
     this.negativeResponse = this.negativeResponse.bind(this);
   }
 
-  questions = ['Can you survive without it?',
+  questions = ['First things first, can I survive without it?',
                'Is there a cheaper version of similar qualities that satisfies your needs?',
                'Are you my girlfriend?',
                'Have you thought this through?',
@@ -27,7 +27,7 @@ class Question extends React.Component {
                'For more than a day?',
                'Liar...']
 
-  questions2 = {m1:<Question text1="Can you survive without it?" yes='m3' no='m2'/>,
+  questions2 = {m1:<Question text1="First things first, can I survive without it?" yes='m3' no='m2'/>,
                m2:'Is there a cheaper version of similar qualities that satisfies your needs?',
                m3:'Are you my girlfriend?',
                m4:'Have you thought this through?',
@@ -67,9 +67,33 @@ class Question extends React.Component {
       <div>
         <h1>{this.state.text}</h1>
         <div id="buttons">
-            <Button variant="contained" size="large" fullWidth={true}
-             color="primary" onClick={this.testFunction}><h2>Yes</h2></Button>
-            <Button variant="contained" size="large" fullWidth={true}
+            <Button 
+            sx={[{ borderRadius: 35,
+                backgroundColor: "#4B9AAA",
+                color: "#F7E1D7",
+                padding: "18px 16px",
+                fontSize: "18px"
+              },
+              {
+                '&:hover': {
+                  color: "#F7E1D7",
+                  backgroundColor: "#6DB1BF",
+                }}
+            ]}
+            variant="contained" size="large" fullWidth={true}
+             onClick={this.testFunction}><h2>Yes</h2></Button>
+            <Button sx={[{ borderRadius: 95,
+                backgroundColor: "#4B9AAA",
+                color: "#F7E1D7",
+                padding: "18px 16px",
+                fontSize: "18px"
+              },
+              {
+                '&:hover': {
+                  color: "#F7E1D7",
+                  backgroundColor: "#6DB1BF",
+                }}
+            ]}variant="contained" size="large" fullWidth={true}
              color="primary" onClick={this.negativeResponse}><h2>No</h2></Button>
         </div>
       </div>
@@ -80,7 +104,7 @@ class Question extends React.Component {
 return (
   <div className="App">
     <header className="App-header">
-    <h1>Should I Buy It?</h1>
+    <h1 className="titleText">Should I Buy It?</h1>
       <Question />
     </header>
   </div>
