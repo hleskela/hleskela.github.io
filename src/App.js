@@ -1,8 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
-import React, { useState } from 'react';
+import React from 'react';
 import Button from '@mui/material/Button';
-import Slide from '@mui/material/Slide';
 
 function App() {
 
@@ -29,14 +27,14 @@ class Question extends React.Component {
                'For more than a day?',
                'Liar...']
 
-  questions2 = {message1:<Question text1="Can you survive without it?" yes='m3' no='m2'/>,
-               message2:'Is there a cheaper version of similar qualities that satisfies your needs?',
-               message3:'Are you my girlfriend?',
-               message4:'Have you thought this through?',
-               message5:'For more than 10 minutes?',
-               message6:'For more than 1 hour?',
-               message7:'For more than a day?',
-               message8:'Liar...'}
+  questions2 = {m1:<Question text1="Can you survive without it?" yes='m3' no='m2'/>,
+               m2:'Is there a cheaper version of similar qualities that satisfies your needs?',
+               m3:'Are you my girlfriend?',
+               m4:'Have you thought this through?',
+               m5:'For more than 10 minutes?',
+               m6:'For more than 1 hour?',
+               m7:'For more than a day?',
+               m8:'Liar...'}
 
   changeText(newText) {
     this.setState({
@@ -63,7 +61,8 @@ class Question extends React.Component {
   }
 
   render() {
-    console.log(this.questions2["message3"]);
+    var t = this.questions2["m1"];
+    console.log(t.props.text1);
     return (
       <div>
         <h1>{this.state.text}</h1>
@@ -78,29 +77,14 @@ class Question extends React.Component {
   }
 }
 
-function handleClick(props) {
-  return console.log('yo')
-}
-
-
-function GenerateText(props) {
-  return <h1>{props.name}</h1>;
-}
-
-function GetPercentage() {
-  return 10+"%";
-}
-
-  return (
-    <div className="App">
-      <header className="App-header">
-      <h1>Should I Buy It?</h1>
-        <Question />
-      </header>
-    </div>
+return (
+  <div className="App">
+    <header className="App-header">
+    <h1>Should I Buy It?</h1>
+      <Question />
+    </header>
+  </div>
   );
 }
 
 export default App;
-
-/**<footer className="App-footer"> progress bar at <GetPercentage/></footer>*/
