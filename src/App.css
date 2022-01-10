@@ -22,13 +22,17 @@
 
 .titleText {
   font-size: calc(10px + 10vmin);
-  color: #94E8B4;
+  color: #FC684A; /* #94E8B4 */
   margin-top: 0;
   margin-bottom: 10vmin;
 }
 
+.buttons:hover {
+  color: #282c34 
+}
 
-#buttons {
+
+.buttons {
   display: flex;
   width: 400px;
   margin:0 auto;

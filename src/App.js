@@ -7,14 +7,13 @@ function App() {
 class Question extends React.Component {
   constructor(props) {
     super(props);
-    this.text1 = props.text;
+    this.text = props.text;
     this.yes_question_pointer = props.yes;
     this.no_question_pointer = props.no;
     this.state = {text: 'First things first, can I survive without it?', count: 1};
 
     this.changeText = this.changeText.bind(this);
-    this.testFunction = this.testFunction.bind(this);
-    this.increment = this.increment.bind(this);
+    this.positiveResponse = this.positiveResponse.bind(this);
     this.negativeResponse = this.negativeResponse.bind(this);
   }
 
@@ -27,14 +26,16 @@ class Question extends React.Component {
                'For more than a day?',
                'Liar...']
 
-  questions2 = {m1:<Question text1="First things first, can I survive without it?" yes='m3' no='m2'/>,
-               m2:'Is there a cheaper version of similar qualities that satisfies your needs?',
-               m3:'Are you my girlfriend?',
+  questions2 = {m1:<Question text="First things first, can I survive without it?" yes='m3' no='m2'/>,
+               m2:<Question text='Is there a cheaper version of similar qualities that satisfies your needs?' yes='m10' no='m9'/>,
+               m3:<Question text='Are you my girlfriend?' yes='m3' no='m2'/>,
                m4:'Have you thought this through?',
                m5:'For more than 10 minutes?',
                m6:'For more than 1 hour?',
                m7:'For more than a day?',
-               m8:'Liar...'}
+               m8:'Liar...',
+               m9:'Then buy it!',
+               m10:'Then buy the cheaper item!'}
 
   changeText(newText) {
     this.setState({
@@ -42,31 +43,22 @@ class Question extends React.Component {
     })
   }
   
-  increment(){
-    this.setState({
-      count: this.state.count+1
-    })
-  }
   
-  testFunction (){
-    this.increment();
-    this.changeText(this.questions[this.state.count]);
+  positiveResponse (){
+    this.changeText(this.questions2[this.yes_question_pointer].props.text);
   }
 
   negativeResponse(){
-    this.changeText('Then buy it!')
-    this.setState({
-      count: 0
-    })
+    this.changeText(this.questions2[this.no_question_pointer].props.text);
   }
 
   render() {
     var t = this.questions2["m1"];
-    console.log(t.props.text1);
+    console.log(t.props.text);
     return (
       <div>
         <h1>{this.state.text}</h1>
-        <div id="buttons">
+        <div className="buttons">
             <Button 
             sx={[{ borderRadius: 35,
                 backgroundColor: "#4B9AAA",
@@ -81,7 +73,7 @@ class Question extends React.Component {
                 }}
             ]}
             variant="contained" size="large" fullWidth={true}
-             onClick={this.testFunction}><h2>Yes</h2></Button>
+             onClick={this.positiveResponse}><h2>Yes</h2></Button>
             <Button sx={[{ borderRadius: 95,
                 backgroundColor: "#4B9AAA",
                 color: "#F7E1D7",
@@ -105,7 +97,7 @@ return (
   <div className="App">
     <header className="App-header">
     <h1 className="titleText">Should I Buy It?</h1>
-      <Question />
+      <Question yes='m3' no='m2'/>
     </header>
   </div>
   );
