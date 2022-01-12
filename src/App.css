@@ -9,6 +9,10 @@
   }
 }
 
+.animate__animated {
+  --animate-duration: 1.5s;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -22,7 +26,8 @@
 
 .titleText {
   font-size: calc(10px + 10vmin);
-  color: #FC684A; /* #94E8B4 */
+  color: #FC684A;
+  /* color:#94E8B4; */
   margin-top: 0;
   margin-bottom: 10vmin;
 }
